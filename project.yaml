@@ -1,0 +1,28 @@
+name: WobbleWheels
+options:
+  bundleIdPrefix: com.example
+targets:
+  WobbleWheels:
+    type: application
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources:
+      - path: ContentView.swift
+      - path: GameScene.swift
+      - path: LAN.swift
+    info:
+      path: Info.plist
+      properties:
+        CFBundleDisplayName: Wobble Wheels
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        NSLocalNetworkUsageDescription: Find and play with a nearby player
+        NSBonjourServices:
+          - _wobble-wheels._tcp
+          - _wobble-wheels._udp
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.wobblewheels
+        SWIFT_VERSION: "5.0"
