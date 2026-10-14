@@ -12,7 +12,9 @@ jobs:
       - name: Generate Xcode project
         run: |
           brew install xcodegen
-          xcodegen generate
+          ls -la
+          SPEC=$(ls | grep -iE '^project\.ya?ml$' | head -1)
+          xcodegen generate --spec "$SPEC"
 
       - name: Build (unsigned)
         run: |
